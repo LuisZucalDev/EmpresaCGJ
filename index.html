@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGJ Electricidad de Servicio</title>
+    <title>⚡ CGJ Electricidad</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
     <!-- NAVBAR -->
     <header>
         <nav class="navbar">
-            <h1 class="logo">⚡ CGJ Electricidad</h1>
+            <h1 class="logo">⚡ CGJ Servicios de Electricidad</h1>
             <div class="menu-toggle" id="menu-toggle">☰</div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
@@ -41,24 +43,56 @@
         </p>
     </section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="services">
-        <h2>Nuestros Servicios</h2>
-        <div class="service-cards">
-            <div class="card">
-                <h3>Instalaciones Eléctricas</h3>
-                <p>Montaje, cableado y puesta en marcha para obras residenciales e industriales.</p>
-            </div>
-            <div class="card">
-                <h3>Mantención Preventiva</h3>
-                <p>Inspecciones y mantenimiento para evitar fallas eléctricas.</p>
-            </div>
-            <div class="card">
-                <h3>Atención de Emergencias</h3>
-                <p>Servicio 24/7 para fallas o cortes eléctricos inesperados.</p>
-            </div>
+ 
+<!-- SERVICIOS -->
+<section id="servicios" class="services">
+    <h2>Nuestros Servicios</h2>
+    <div class="service-cards">
+
+        <div class="card">
+            <h3>Instalaciones Eléctricas</h3>
+            <p>Montaje, cableado y puesta en marcha de instalaciones residenciales e industriales.</p>
         </div>
-    </section>
+
+        <div class="card">
+            <h3>Mantención Preventiva y Correctiva</h3>
+            <p>Inspección y mantenimiento preventivo para evitar fallas, y correctivo para restaurar el funcionamiento eléctrico.</p>
+        </div>
+
+        <div class="card">
+            <h3>Atención de Emergencias</h3>
+            <p>Servicio 24/7 para reparar cortes, fallas, cortocircuitos y sobrecargas eléctricas en hogares e industrias.</p>
+        </div>
+
+        <div class="card">
+            <h3>Puesta a Tierra y Malla</h3>
+            <p>Instalación y mantenimiento de sistemas de puesta a tierra y mallas de protección para seguridad eléctrica.</p>
+        </div>
+
+        <div class="card">
+            <h3>Postes de Alumbrado</h3>
+            <p>Montaje, conexionado e instalación de postes y luminarias para alumbrado público y privado.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tableros de Distribución</h3>
+            <p>Diseño, montaje y mantenimiento de tableros eléctricos para una distribución segura y eficiente de energía.</p>
+        </div>
+
+        <div class="card">
+            <h3>Iluminación Interior y Exterior</h3>
+            <p>Instalación y optimización de sistemas de iluminación LED en hogares, oficinas, industrias y espacios públicos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Automatización y Control</h3>
+            <p>Implementación de sistemas automatizados para mejorar eficiencia energética y control de procesos eléctricos.</p>
+        </div>
+
+    </div>
+</section>
+
+
 
 <!-- PROYECTOS -->
 <section id="proyectos" class="projects">
@@ -68,7 +102,7 @@
 
         <!-- Proyecto 1 -->
         <div class="project">
-            <h3>Instalación Eléctrica Camaras</h3>
+            <h3>Instalación Camaras Eléctricas </h3>
             <div class="carousel">
                 <button class="prev">&#10094;</button>
                 <div class="carousel-images">
@@ -110,7 +144,7 @@
 
         <!-- Proyecto 4 -->
         <div class="project">
-            <h3>Por Definir</h3>
+            <h3>Instalación de Mallas a Tierra</h3>
             <div class="carousel">
                 <button class="prev">&#10094;</button>
                 <div class="carousel-images">
@@ -160,22 +194,14 @@
         <div class="client-track">
             <img src="img/cliente1.jpg" alt="Cliente 1">
             <img src="img/cliente2.jpeg" alt="Cliente 2">
-            <img src="img/cliente3.png" alt="Cliente 3">
-            <img src="img/cliente4.png" alt="Cliente 4">
-            <img src="img/cliente5.png" alt="Cliente 5">
-            <img src="img/cliente6.png" alt="Cliente 6">
-            <img src="img/cliente7.png" alt="Cliente 7">
-            <img src="img/cliente8.png" alt="Cliente 8">
+            <img src="img/cliente3.jpeg" alt="Cliente 3">
+           
 
             <!-- 👇 Duplica los logos para que el bucle sea perfecto -->
             <img src="img/cliente1.jpg" alt="Cliente 1">
             <img src="img/cliente2.jpeg" alt="Cliente 2">
-            <img src="img/cliente3.png" alt="Cliente 3">
-            <img src="img/cliente4.png" alt="Cliente 4">
-            <img src="img/cliente5.png" alt="Cliente 5">
-            <img src="img/cliente6.png" alt="Cliente 6">
-            <img src="img/cliente7.png" alt="Cliente 7">
-            <img src="img/cliente8.png" alt="Cliente 8">
+            <img src="img/cliente3.jpeg" alt="Cliente 3">
+            
         </div>
     </div>
 </section>
@@ -191,31 +217,34 @@
   <h2>Contáctanos</h2>
   <p>¿Tienes consultas o necesitas una cotización? Escríbenos y te responderemos pronto.</p>
 
-  <form action="https://formsubmit.co/TU_CORREO@DOMINIO.com" method="POST">
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
-    <input type="email" name="email" placeholder="Tu correo electrónico" required>
-    <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-    <button type="submit">Enviar mensaje</button>
+    <form action="https://formspree.io/f/xyznbnzb" method="POST">
+        <label for="nombre">Tu nombre</label>
+        <input type="text" name="nombre" id="nombre" required>
 
-    <!-- Opcionales (puedes editarlos o quitarlos) -->
-    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
-    <input type="hidden" name="_captcha" value="false">
-  </form>
+        <label for="telefono">Número de contacto</label>
+        <input type="tel" name="telefono" id="telefono" required>
+
+        <label for="email">Tu correo electrónico</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="mensaje">Tu mensaje</label>
+        <textarea name="mensaje" id="mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
 </section>
 
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2025 CGJ Electricidad de Servicio | Todos los derechos reservados</p>
+        <p>© 2025 CGJ Electricidad | Todos los derechos reservados</p>
     </footer>
 
     <!-- BOTÓN WHATSAPP -->
-    <a href="https://wa.me/56940701998" 
-    class="whatsapp-float" 
-    target="_blank" 
-    title="Contáctanos por WhatsApp">
-    💬
-    </a>
+    <a href="https://wa.me/56940701998" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
     <script src="script.js"></script>
 </body>
