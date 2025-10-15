@@ -195,12 +195,24 @@
             <img src="img/cliente1.jpg" alt="Cliente 1">
             <img src="img/cliente2.jpeg" alt="Cliente 2">
             <img src="img/cliente3.jpeg" alt="Cliente 3">
+            <img src="img/cliente4.jpeg" alt="Cliente 4">
+            <img src="img/cliente5.png" alt="Cliente 5">
+            <img src="img/cliente6.jpeg" alt="Cliente 6">
+            <img src="img/cliente7.png" alt="Cliente 7">
+            <img src="img/cliente8.jpeg" alt="Cliente 8">
+            <img src="img/cliente9.png" alt="Cliente 9">
            
 
             <!-- 👇 Duplica los logos para que el bucle sea perfecto -->
             <img src="img/cliente1.jpg" alt="Cliente 1">
             <img src="img/cliente2.jpeg" alt="Cliente 2">
             <img src="img/cliente3.jpeg" alt="Cliente 3">
+            <img src="img/cliente4.jpeg" alt="Cliente 4">
+            <img src="img/cliente5.png" alt="Cliente 5">
+            <img src="img/cliente6.jpeg" alt="Cliente 6">
+            <img src="img/cliente7.png" alt="Cliente 7">
+            <img src="img/cliente8.jpeg" alt="Cliente 8">
+            <img src="img/cliente9.png" alt="Cliente 9">
             
         </div>
     </div>
@@ -211,28 +223,34 @@
 
     </section>
 
-    <!-- CONTACTO -->
 <!-- CONTACTO -->
 <section id="contacto" class="contact">
   <h2>Contáctanos</h2>
   <p>¿Tienes consultas o necesitas una cotización? Escríbenos y te responderemos pronto.</p>
 
-    <form action="https://formspree.io/f/xyznbnzb" method="POST">
-        <label for="nombre">Tu nombre</label>
-        <input type="text" name="nombre" id="nombre" required>
+  <form action="https://formspree.io/f/xyznbnzb" method="POST" class="formulario">
+    <div class="campo">
+      <input type="text" name="nombre" id="nombre" required>
+      <label for="nombre">Tu nombre</label>
+    </div>
 
-        <label for="telefono">Número de contacto</label>
-        <input type="tel" name="telefono" id="telefono" required>
+    <div class="campo">
+      <input type="tel" name="telefono" id="telefono" required>
+      <label for="telefono">Número de contacto</label>
+    </div>
 
-        <label for="email">Tu correo electrónico</label>
-        <input type="email" name="email" id="email" required>
+    <div class="campo">
+      <input type="email" name="email" id="email" required>
+      <label for="email">Tu correo electrónico</label>
+    </div>
 
-        <label for="mensaje">Tu mensaje</label>
-        <textarea name="mensaje" id="mensaje" required></textarea>
+    <div class="campo">
+      <textarea name="mensaje" id="mensaje" required></textarea>
+      <label for="mensaje">Tu mensaje</label>
+    </div>
 
-        <button type="submit">Enviar</button>
-    </form>
-
+    <button type="submit">Enviar</button>
+  </form>
 </section>
 
 
