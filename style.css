@@ -6,14 +6,25 @@
 }
 
 body {
+    /* Fondo con degradado sutil + imagen */
     background: 
         linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-        url('img/fondo-textura.jpeg') no-repeat center center fixed;
-    background-size: cover;
+        url('img/fondo-textura.jpeg') no-repeat center center;
+    
+    background-size: cover;          /* Se ajusta a cualquier pantalla */
+    background-attachment: fixed;    /* Fondo fijo en escritorio */
     font-family: 'Poppins', sans-serif;
     color: #333;
     margin: 0;
     padding: 0;
+}
+
+/* 🔧 Corrección para móviles */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Mejora rendimiento y evita parpadeos en móviles */
+        background-position: center;
+    }
 }
 
 /* NAVBAR */
