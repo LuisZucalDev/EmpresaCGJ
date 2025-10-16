@@ -555,3 +555,207 @@ footer {
   font-size: 12px;
   color: #000000;
 }
+
+/* Secciones de presentación */
+.presentation {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #001f3f, #003366);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.presentation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #FFD700, #00BFFF);
+}
+
+.presentation h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.presentation p {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* Efecto al pasar el mouse */
+.highlight:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Animación al aparecer */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.presentation {
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .presentation {
+        padding: 25px 20px;
+        margin: 30px 15px;
+    }
+
+    .presentation h2 {
+        font-size: 1.6em;
+    }
+
+    .presentation p {
+        font-size: 1em;
+    }
+}
+
+/* ORGANIGRAMA */
+.organization {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px 25px;
+    background: linear-gradient(135deg, #001f3f, #003366);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.organization h2 {
+    color: #FFD700;
+    font-size: 2.3em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.org-description {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+.org-level {
+    margin-bottom: 40px;
+}
+
+.org-level h3 {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 0;
+    font-size: 1.3em;
+    color: #FFD700;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.org-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.org-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 15px 20px;
+    width: 270px;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.org-box:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.org-box strong {
+    color: #fff;
+    font-size: 1.05em;
+}
+
+.org-box span {
+    color: #FFD700;
+    font-size: 0.9em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .organization {
+        padding: 25px 15px;
+    }
+
+    .org-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .org-box {
+        width: 90%;
+    }
+
+    .organization h2 {
+        font-size: 1.8em;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;      /* tamaño del texto principal */
+    color: white;
+    gap: 10px;             /* espacio entre el logo y el texto */
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.logo img {
+    height: 2em;           /* el logo tendrá el mismo alto que la letra */
+    width: auto;           /* mantiene proporción */
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.4em;
+        gap: 8px;
+    }
+}
