@@ -19,13 +19,34 @@ body {
     padding: 0;
 }
 
-/* 🔧 Corrección para móviles */
+/* Estilo general del hero */
+.hero {
+    background: url('img/fondo-electrico.jpeg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* ✅ Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
-    body {
-        background-attachment: scroll; /* Mejora rendimiento y evita parpadeos en móviles */
-        background-position: center;
+    .hero {
+        background-size: cover;           /* Mantiene la proporción sin recortar mal */
+        background-position: center;      /* Centra mejor la imagen */
+        background-attachment: scroll;    /* Mejora el rendimiento móvil */
+        min-height: 70vh;                 /* Ajusta altura en móviles */
+        padding: 20px;                    /* Añade espacio interior */
+    }
+
+    .hero h1, .hero p {
+        font-size: 1rem;                  /* Reduce el tamaño del texto */
     }
 }
+
 
 /* NAVBAR */
 .navbar {
@@ -71,29 +92,80 @@ body {
 
 /* HERO */
 .hero {
-    background: url('img/fondo-electrico.jpeg');
-    background-size: cover;
-    min-height: 100vh;
+    background: url('img/fondo-electrico.jpeg') no-repeat center center;
+    background-size: cover;            /* Escala correctamente en todos los tamaños */
+    min-height: 100vh;                 /* Ocupa toda la pantalla */
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
     position: relative;
+    overflow: hidden;                  /* Evita desbordes en pantallas pequeñas */
 }
 
+/* Capa oscura encima del fondo */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.55);      /* Oscurece un poco la imagen para mejor contraste */
+    backdrop-filter: brightness(0.9);
 }
 
+/* Contenido centrado */
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 700px;
     padding: 20px;
+}
+
+/* ✅ Texto adaptable */
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ✅ Botón adaptativo */
+.hero .btn {
+    background: #ffcc00;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #e6b800;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Evita saltos en móviles */
+        background-position: center;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
 }
 
 .btn {
