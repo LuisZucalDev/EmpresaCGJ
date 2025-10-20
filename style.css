@@ -1,761 +1,307 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
+/* ========== RESET ========== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#222;background:#f6f6f6;line-height:1.5}
 
-body {
-    /* Fondo con degradado sutil + imagen */
-    background: 
-        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-        url('img/fondo-textura.jpeg') no-repeat center center;
-    
-    background-size: cover;          /* Se ajusta a cualquier pantalla */
-    background-attachment: fixed;    /* Fondo fijo en escritorio */
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+/* ========== NAVBAR ========== */
+.site-header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(34,34,34,0.95)}
+.navbar{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo-img{height:36px;width:auto}
+.logo-text{font-weight:700}
+.nav-links{list-style:none;display:flex;gap:18px}
+.nav-links a{color:#fff;text-decoration:none;font-weight:500;padding:6px 8px}
+.nav-links a:hover{color:#f7c600}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
 
-/* Estilo general del hero */
-.hero {
-    background: url('img/fondo-electrico.jpeg') no-repeat center center;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
+/* ========== HERO ========== */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 20px 80px;
+  background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('img/fondo-electrico.webp') center/cover no-repeat;
+  color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:20px}
+.hero h1{font-size:2.6rem;margin-bottom:12px}
+.hero p{font-size:1.15rem;margin-bottom:18px}
+.btn{background:#ffcc00;color:#111;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
+.btn:hover{background:#f0b800}
 
-/* ✅ Ajuste para pantallas pequeñas */
-@media (max-width: 768px) {
-    .hero {
-        background-size: cover;           /* Mantiene la proporción sin recortar mal */
-        background-position: center;      /* Centra mejor la imagen */
-        background-attachment: scroll;    /* Mejora el rendimiento móvil */
-        min-height: 70vh;                 /* Ajusta altura en móviles */
-        padding: 20px;                    /* Añade espacio interior */
-    }
+/* ========== SECCIONES ========== */
+section{padding:80px 20px;text-align:center}
+h2{margin-bottom:22px;font-size:2rem;color:#111}
 
-    .hero h1, .hero p {
-        font-size: 1rem;                  /* Reduce el tamaño del texto */
-    }
-}
+/* ========== PRESENTATION HIGHLIGHT ========== */
+.presentation{max-width:900px;margin:20px auto;padding:30px;border-radius:16px;background:linear-gradient(135deg,#001f3f,#003366);color:#fff;box-shadow:0 8px 20px rgba(0,0,0,0.25)}
+.presentation h2{color:#ffd700}
 
+/* ========== SERVICIOS ========== */
+.service-cards{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.card{background:#fff;padding:18px;width:280px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,0.08);transition:transform .25s}
+.card i{font-size:1.8rem;color:#f7c600;margin-bottom:10px}
+.card:hover{transform:translateY(-6px)}
 
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #222;
-    color: #fff;
-    padding: 15px 30px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-}
+/* ========== PROYECTOS / CARRUSEL ========== */
+.projects-container{display:flex;flex-wrap:wrap;gap:30px;justify-content:center}
+.project{width:340px;background:#f4f4f4;padding:18px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,0.08)}
+.project h3{margin-bottom:12px}
+.carousel{position:relative;overflow:hidden;border-radius:12px;background:#ddd;aspect-ratio:1/1}
+.carousel-images{display:flex;transition:transform .45s ease;height:100%}
+.carousel-images img{width:100%;height:100%;object-fit:cover;flex-shrink:0;border-radius:12px}
+.carousel button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#fff;border:none;padding:10px;border-radius:50%;cursor:pointer;z-index:3}
+.carousel .prev{left:10px}
+.carousel .next{right:10px}
+.carousel button:focus{outline:2px solid #fff}
 
-.logo {
-    font-size: 1.2rem;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 17px;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #f7c600;
-}
-
-/* Botón menú móvil */
-.menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-/* HERO */
-.hero {
-    background: url('img/fondo-electrico.jpeg') no-repeat center center;
-    background-size: cover;            /* Escala correctamente en todos los tamaños */
-    min-height: 100vh;                 /* Ocupa toda la pantalla */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;                  /* Evita desbordes en pantallas pequeñas */
-}
-
-/* Capa oscura encima del fondo */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);      /* Oscurece un poco la imagen para mejor contraste */
-    backdrop-filter: brightness(0.9);
-}
-
-/* Contenido centrado */
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
-    padding: 20px;
-}
-
-/* ✅ Texto adaptable */
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-/* ✅ Botón adaptativo */
-.hero .btn {
-    background: #ffcc00;
-    color: #000;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.hero .btn:hover {
-    background: #e6b800;
-}
-
-/* 📱 RESPONSIVE */
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll; /* Evita saltos en móviles */
-        background-position: center;
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .hero .btn {
-        padding: 10px 20px;
-        font-size: 0.95rem;
-    }
-}
-
-.btn {
-    background-color: #f7c600;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    display: inline-block;
-    font-weight: bold;
-}
-
-.btn:hover {
-    background-color: #ffdd00;
-}
-
-/* SECCIONES */
-section {
-    padding: 100px 60px;
-    text-align: center;
-}
-
-h2 {
-    margin-bottom: 30px;
-    color: #000;
-}
-
-.hero-content h2 {
-    margin-bottom: 30px;
-    color: #ffffff;
-}
-
-/* SERVICIOS */
-.service-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: #f4f4f4;
-    padding: 20px;
-    width: 280px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-
-/* PROYECTOS */
-.projects {
-    text-align: center;
-    padding: 100px 60px;
-}
-
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-}
-
-.project {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 340px;
-}
-
-.project h3 {
-    margin-bottom: 15px;
-    color: #222;
-}
-
-/* CARRUSEL */
-.carousel {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Cuadrado y responsivo */
-    background: #ddd; /* Color de fondo por si tarda en cargar */
-}
-
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
-}
-
-.carousel-images img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Evita distorsión */
-    flex-shrink: 0;
-    border-radius: 12px;
-}
-
-
-/* FLECHAS */
-.carousel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 2;
-    transition: background 0.3s;
-}
-
-.carousel button:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-.carousel .prev {
-    left: 10px;
-}
-
-.carousel .next {
-    right: 10px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project {
-        width: 90%;
-    }
-}
-
-
-/* SECCIÓN CONTACTO */
-.contact {
-  background-color: #f8f8f8;
-  padding: 60px 20px;
+/* ================================
+   ORGANIGRAMA CGJ S.A. (MODERNO AZUL/AMARILLO)
+================================ */
+.organigrama {
+  background: #f8fafc;
+  padding: 80px 20px;
   text-align: center;
 }
 
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #333;
+.organigrama h2 {
+  font-size: 2.2rem;
+  color: #003366;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.contact p {
-  max-width: 500px;
-  margin: 0 auto 30px;
-  color: #555;
-  font-size: 1rem;
+.org-desc {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  color: #444;
 }
 
-.contact form {
-  max-width: 500px;
-  margin: auto;
+/* Estructura */
+.organigrama-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  resize: none;
-}
-
-.contact button {
-  background-color: #ffdd00;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact button:hover {
-  background-color: #bda402;
-}
-
-
-/* FOOTER */
-footer {
-    background: #222;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-/* 📱 RESPONSIVE DESIGN */
-@media (max-width: 900px) {
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background-color: #222;
-        flex-direction: column;
-        width: 200px;
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease;
-    }
-
-    .nav-links.open {
-        height: 200px;
-        padding: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    section {
-        padding: 80px 25px;
-    }
-
-    .service-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 500px) {
-    .logo {
-        font-size: 1rem;
-    }
-
-    .btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-}
-
-/* BOTÓN FLOTANTE WHATSAPP */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 32px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #1ebe5a;
-}
-
-/* SECCIÓN CLIENTES */
-.clients {
-    background-color: #f8f8f8;
-    padding: 60px 20px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.clients h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-/* Carrusel infinito */
-.client-carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.client-track {
-    display: flex;
-    width: max-content;
-    gap: 50px;
-    animation: scrollClients 30s linear infinite;
-}
-
-.client-track img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    filter: grayscale(100%);
-    transition: all 0.3s ease;
-}
-
-.client-track img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-}
-
-/* Animación infinita y sin saltos */
-@keyframes scrollClients {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.formulario {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.campo {
-  position: relative;
-}
-
-.campo input,
-.campo textarea {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ffdd00;
-  border-radius: 6px;
-  outline: none;
-}
-
-.campo label {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  color: #777;
-  background: white;
-  padding: 0 5px;
-  transition: 0.2s;
-  pointer-events: none;
-}
-
-/* Cuando el campo está enfocado o tiene texto, el label "flota" */
-.campo input:focus + label,
-.campo input:not(:placeholder-shown) + label,
-.campo textarea:focus + label,
-.campo textarea:not(:placeholder-shown) + label {
-  top: -10px;
-  left: 8px;
-  font-size: 12px;
-  color: #000000;
-}
-
-/* Secciones de presentación */
-.presentation {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 40px 30px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #001f3f, #003366);
-    color: white;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.presentation::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(to right, #FFD700, #00BFFF);
-}
-
-.presentation h2 {
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    color: #FFD700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.presentation p {
-    font-size: 1.1em;
-    line-height: 1.7;
-}
-
-/* Efecto al pasar el mouse */
-.highlight:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-}
-
-/* Animación al aparecer */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.presentation {
-    animation: fadeInUp 1s ease forwards;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .presentation {
-        padding: 25px 20px;
-        margin: 30px 15px;
-    }
-
-    .presentation h2 {
-        font-size: 1.6em;
-    }
-
-    .presentation p {
-        font-size: 1em;
-    }
-}
-
-/* ORGANIGRAMA */
-.organization {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 40px 25px;
-    background: linear-gradient(135deg, #001f3f, #003366);
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    animation: fadeInUp 1s ease forwards;
-}
-
-.organization h2 {
-    color: #FFD700;
-    font-size: 2.3em;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.org-description {
-    font-size: 1.1em;
-    margin-bottom: 40px;
-    color: #e0e0e0;
+  align-items: center;
+  gap: 50px;
 }
 
 .org-level {
-    margin-bottom: 40px;
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
 }
 
-.org-level h3 {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 10px 0;
-    font-size: 1.3em;
-    color: #FFD700;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.org-title {
+  background: #003366;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .org-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  position: relative;
 }
 
-.org-box {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    padding: 15px 20px;
-    width: 270px;
-    min-height: 90px;
-    display: flex;
+.org-card {
+  background: #ffffff;
+  border-top: 5px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  width: 290px;
+  padding: 20px 15px;
+  transition: all 0.3s ease;
+}
+
+.org-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  border-top-color: #003366;
+}
+
+.org-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.org-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Conexiones entre niveles */
+.org-level:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 25px;
+  background: #ccc;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .org-row {
     flex-direction: column;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.org-box:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-}
-
-.org-box strong {
-    color: #fff;
-    font-size: 1.05em;
-}
-
-.org-box span {
-    color: #FFD700;
-    font-size: 0.9em;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .organization {
-        padding: 25px 15px;
-    }
-
-    .org-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .org-box {
-        width: 90%;
-    }
-
-    .organization h2 {
-        font-size: 1.8em;
-    }
-}
-
-.logo {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.6em;      /* tamaño del texto principal */
-    color: white;
-    gap: 10px;             /* espacio entre el logo y el texto */
-    font-weight: bold;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .org-card {
+    width: 90%;
+  }
 }
 
-.logo img {
-    height: 2em;           /* el logo tendrá el mismo alto que la letra */
-    width: auto;           /* mantiene proporción */
-    vertical-align: middle;
-    transition: transform 0.3s ease;
+
+
+/* ========== CLIENTES (carrusel infinito) ========== */
+.clients{background:#f8f8f8;padding:60px 20px}
+.client-carousel{overflow:hidden;position:relative}
+.client-track{display:flex;gap:40px;align-items:center;animation:scrollClients 30s linear infinite}
+.client-track img{width:120px;height:120px;object-fit:contain;filter:grayscale(100%);transition:transform .25s,filter .25s}
+.client-track img:hover{filter:none;transform:scale(1.06)}
+@keyframes scrollClients{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ========== FORMULARIO (labels flotantes) ========== */
+.formulario{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.campo{position:relative}
+.campo input,.campo textarea{width:100%;padding:14px;border-radius:8px;border:1px solid #e6b800;background:#fff;outline:none;font-size:1rem}
+.campo label{position:absolute;left:12px;top:12px;background:#fff;padding:0 6px;color:#666;transition:all .18s;pointer-events:none}
+.campo input:focus + label, .campo textarea:focus + label,
+.campo input:not(:placeholder-shown) + label, .campo textarea:not(:placeholder-shown) + label{
+  top:-10px;left:10px;font-size:.78rem;color:#000
+}
+.enviar{background:#ffcc00;color:#000;border:none;padding:12px;border-radius:10px;font-weight:700;cursor:pointer}
+
+/* ========== WHATSAPP & SCROLL TOP & FOOTER ========== */
+.whatsapp-float{position:fixed;right:25px;bottom:25px;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;z-index:150;box-shadow:0 6px 18px rgba(0,0,0,.2);text-decoration:none}
+.scroll-top{position:fixed;right:25px;bottom:100px;width:48px;height:48px;border-radius:50%;background:#333;color:#fff;display:flex;align-items:center;justify-content:center;z-index:140;box-shadow:0 6px 18px rgba(0,0,0,.15);text-decoration:none;display:none}
+footer{background:#222;color:#fff;padding:20px;text-align:center}
+
+/* ========== RESPONSIVE ======== */
+@media (max-width:900px){
+  .hero h1{font-size:2rem}
+  .nav-links{display:none}
+  .menu-toggle{display:block}
+  .project{width:90%}
+  .client-track{gap:26px}
+}
+@media (max-width:600px){
+  .hero{padding:120px 14px 60px}
+  .hero h1{font-size:1.5rem}
+  .service-cards{flex-direction:column;align-items:center}
+  .org-box{width:90%}
+  .client-track img{width:90px;height:90px}
 }
 
-.logo img:hover {
-    transform: scale(1.1);
+/* Evita desplazamiento cuando el menú está abierto */
+body.no-scroll {
+  overflow: hidden;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 1.4em;
-        gap: 8px;
-    }
+/* Icono de menú animado */
+#menu-toggle.active {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+/* Botón subir arriba */
+.scroll-top {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top.show {
+  opacity: 0.8;
+  pointer-events: auto;
+}
+
+.scroll-top:hover {
+  opacity: 1;
+}
+
+/* Mensaje flotante del formulario */
+.form-message {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: #333;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 10000;
+}
+.form-message.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Animación de aparición en scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   MENÚ DESPLEGABLE (versión móvil)
+=========================== */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.98);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    display: none; /* oculto por defecto */
+    transition: all 0.3s ease;
+  }
+
+  /* cuando el menú está abierto */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* animación suave */
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
