@@ -164,7 +164,7 @@ h2{margin-bottom:22px;font-size:2rem;color:#111}
 
 
 /* ========== CLIENTES (carrusel infinito) ========== */
-.clients{background:#666666ab;padding:60px 20px}
+.clients{background:#c0c0c045;padding:60px 20px}
 .client-carousel{overflow:hidden;position:relative}
 .client-track{display:flex;gap:40px;align-items:center;animation:scrollClients 30s linear infinite}
 .client-track img{width:120px;height:120px;object-fit:contain;filter:grayscale(100%);transition:transform .25s,filter .25s}
@@ -307,44 +307,3 @@ body.no-scroll {
 }
 
 
-/* Imagen de fondo para todo el body */
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-
-    /* Imagen de fondo */
-    background-image: url('img/fondo-textura.webp'); /* ruta de tu imagen */
-    background-size: cover;      /* ocupa todo el fondo */
-    background-position: center; /* centrada */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* se mantiene al hacer scroll */
-
-    /* Efecto de transparencia / invisibilidad parcial */
-    position: relative;
-}
-
-/* Capa de overlay para hacerla más “invisible” */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.85); /* blanco semitransparente */
-    /* Si quieres efecto más oscuro, usa rgba(0,0,0,0.3) */
-    z-index: 0;
-}
-
-/* Todo el contenido de la página encima del overlay */
-body > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* Responsive: asegurar que se vea bien en móviles */
-@media (max-width: 768px) {
-    body::before {
-        background-color: rgba(255, 255, 255, 0.85); /* un poco más visible en móvil */
-    }
-}
